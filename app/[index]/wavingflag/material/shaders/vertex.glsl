@@ -1,7 +1,5 @@
 
 uniform float uTime; 
-
-
 varying vec2 vUv;
  
 

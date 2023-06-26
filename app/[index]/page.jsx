@@ -18,7 +18,7 @@ export default function page() {
 			<main>
 				<section>
 					<div className='container'>
-						<h1>Page</h1>
+						<h1 className='text-7xl font-bold text-black'>Page</h1>
 					</div>
 				</section>
 			</main>

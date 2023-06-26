@@ -2,8 +2,8 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
 import { OrbitControls } from '@react-three/drei'
-import RagingShadersMesh from './shaders/ragingshaders'
 import { DoubleSide } from 'three'
+import WaveFlagShaders from './material/waveFlag'
 
 const CanvasComponent = dynamic(
 	() => import('@/components/canvas/CanvasComponent'),
@@ -18,7 +18,7 @@ export default function page() {
 			<OrbitControls />
 			<mesh>
 				<planeGeometry args={[3, 3, 100, 100]} />
-				<RagingShadersMesh side={DoubleSide} />
+				<WaveFlagShaders side={DoubleSide} />
 			</mesh>
 		</CanvasComponent>
 	)
