@@ -9,10 +9,6 @@ const Text = dynamic(() => import('@/components/text3D/Text'), {
 	ssr: false,
 })
 
-const Donut = dynamic(() => import('@/components/food/Donut'), {
-	ssr: false,
-})
-
 const CanvasComponent = dynamic(
 	() => import('@/components/canvas/CanvasComponent'),
 	{
@@ -40,7 +36,6 @@ export default function Home() {
 						size={1}
 						height={0.25}
 					/>
-					<Donut />
 				</Suspense>
 			</CanvasComponent>
 		</>

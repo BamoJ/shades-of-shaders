@@ -26,6 +26,13 @@ body {
 	width: 100%;
 }
 
-nav {
-	mix-blend-mode: exclusion !important;
+section {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	z-index: 3;
+}
+
+.container {
+	padding: 0 3rem;
 }

@@ -15,15 +15,13 @@ const CanvasComponent = dynamic(
 export default function page() {
 	return (
 		<>
-			<Loader />
-			<CanvasComponent>
-				<ambientLight intensity={1.5} />
-				<OrbitControls />
-				<mesh>
-					<boxGeometry args={[1, 1, 1]} />
-					<meshStandardMaterial attach='material' color='hotpink' />
-				</mesh>
-			</CanvasComponent>
+			<main>
+				<section>
+					<div className='container'>
+						<h1>Page</h1>
+					</div>
+				</section>
+			</main>
 		</>
 	)
 }
