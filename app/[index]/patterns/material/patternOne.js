@@ -7,29 +7,27 @@ import { extend, useFrame } from '@react-three/fiber'
 import vertexShader from './shaders/vertex.glsl'
 import fragmentShader from './shaders/fragment.glsl'
 
-const WaveFlag = shaderMaterial(
+const ShaderP1 = shaderMaterial(
 	{
 		uMouse: new THREE.Vector2(0, 0),
 		uTime: 0,
-		uFreq: new THREE.Vector2(5, 5),
-		uTexture: new THREE.TextureLoader().load('/textures/onepiece.jpg'),
 	},
 	vertexShader,
 	fragmentShader
 )
-extend({ WaveFlag })
+extend({ ShaderP1 })
 
-const WaveFlagShaders = forwardRef(({ children, ...props }, ref) => {
+const ShadersOne = forwardRef(({ children, ...props }, ref) => {
 	const localRef = useRef()
 
 	useImperativeHandle(ref, () => localRef.current)
 
-	// useFrame((_, delta) => {
-	// 	localRef.current.uTime += delta
-	// })
+	useFrame((_, delta) => {
+		localRef.current.uTime += delta
+	})
 
 	return (
-		<waveFlag
+		<shaderP1
 			ref={localRef}
 			{...props}
 			glsl={THREE.GLSL3}
@@ -38,4 +36,4 @@ const WaveFlagShaders = forwardRef(({ children, ...props }, ref) => {
 	)
 })
 
-export default WaveFlagShaders
+export default ShadersOne

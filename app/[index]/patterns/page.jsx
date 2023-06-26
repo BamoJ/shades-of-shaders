@@ -1,9 +1,9 @@
 'use client'
 import React, { useRef } from 'react'
 import dynamic from 'next/dynamic'
-import { OrbitControls, Stage } from '@react-three/drei'
+import { OrbitControls } from '@react-three/drei'
+import ShadersOne from './material/patternOne'
 import { DoubleSide } from 'three'
-import WaveFlagShaders from './material/waveFlag'
 
 const CanvasComponent = dynamic(
 	() => import('@/components/canvas/CanvasComponent'),
@@ -17,12 +17,10 @@ export default function page() {
 
 	return (
 		<CanvasComponent>
-			<color attach='background' args={['#131313']} />
-			<ambientLight intensity={0.5} />
 			<OrbitControls />
 			<mesh ref={ref}>
-				<planeGeometry args={[4.5, 3, 100, 100]} />
-				<WaveFlagShaders side={DoubleSide} />
+				<planeGeometry args={[4, 4, 100, 100]} />
+				<ShadersOne side={DoubleSide} />
 			</mesh>
 		</CanvasComponent>
 	)
